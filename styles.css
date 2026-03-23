@@ -2,17 +2,17 @@
    Design tokens
 ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --bg:             #f5f2ed;
-  --bg-card:        #ffffff;
-  --bg-muted:       #ebe7e1;
-  --text:           #1a1a1a;
-  --text-body:      #2e2e2e;   /* body text — much higher contrast than before */
-  --text-secondary: #4a4a4a;   /* was #6b6b6b — significantly better readability */
-  --text-dim:       #888888;
-  --border:         #e0ddd8;
-  --border-hover:   #c5c0b8;
-  --accent:         #0e7c6e;   /* deep teal — technical/robotics feel */
-  --accent-dim:     rgba(14, 124, 110, 0.12);
+  --bg:             #141312;        /* charcoal dark, warm undertone */
+  --bg-card:        #1d1c1a;        /* slightly lifted card surface */
+  --bg-muted:       #252320;        /* muted / placeholder background */
+  --text:           #f0ede8;        /* warm white */
+  --text-body:      #ccc9c2;        /* readable body text on dark */
+  --text-secondary: #8a8780;        /* secondary — clear on dark bg */
+  --text-dim:       #4e4c49;
+  --border:         #2a2826;
+  --border-hover:   #3e3c38;
+  --accent:         #2dd4bf;        /* teal-400 — pops on dark background */
+  --accent-dim:     rgba(45, 212, 191, 0.10);
   --mobile-h:       56px;
   --sidebar-w:      340px;
   --font-mono:      'Share Tech Mono', monospace;
@@ -27,7 +27,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
   color: var(--text-body);
   font-family: var(--font-body);
   font-size: 16px;
