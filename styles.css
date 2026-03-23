@@ -235,6 +235,12 @@ a   { color: inherit; text-decoration: none; }
   gap: 16px;
 }
 
+/* 3rd card spans full width */
+.projects-grid .project-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 8px);
+}
+
 /* Matches oem-image-card */
 .project-card {
   display: flex;
