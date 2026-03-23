@@ -20,6 +20,37 @@
   --font-body:      'Inter', -apple-system, sans-serif;
 }
 
+/* ── Light theme override ──────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:             #f5f2ed;
+  --bg-card:        #ffffff;
+  --bg-muted:       #ebe7e1;
+  --text:           #1a1a1a;
+  --text-body:      #2e2e2e;
+  --text-secondary: #4a4a4a;
+  --text-dim:       #a0a0a0;
+  --border:         #e0ddd8;
+  --border-hover:   #c5c0b8;
+  --accent:         #0e7c6e;
+  --accent-dim:     rgba(14, 124, 110, 0.08);
+}
+
+[data-theme="light"] body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="light"] #starfield { opacity: 0; }
+
+[data-theme="light"] .project-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sidebar-photo:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
 /* ─────────────────────────────────────────────────────────────────────────────
    Reset
 ───────────────────────────────────────────────────────────────────────────── */
@@ -198,9 +229,41 @@ a   { color: inherit; text-decoration: none; }
   background: var(--accent);
 }
 
+/* Theme toggle — fixed top-right */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 200;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+}
+
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+
+[data-theme="light"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
 /* Social icons */
 .sidebar-social {
   display: flex;
+  align-items: center;
   gap: 16px;
   margin-top: auto;
 }
