@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptive Grasping — Robin Tomar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <div class="project-page">
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="project-page-hero">
+      <img src="../assets/images/project-grasping.png" alt="Robotic gripper performing adaptive grasping" class="project-page-image" />
+    </div>
+
+    <div class="section-label"><span class="section-num">02 —</span> DEEP DIVE</div>
+    <h1 class="section-heading">Adaptive Grasping &amp; Collision Recovery Strategy</h1>
+
+    <div class="project-page-tags">
+      <span class="tag">C++</span>
+      <span class="tag">ROS2</span>
+      <span class="tag">MoveIt</span>
+      <span class="tag">Motion Planning</span>
+      <span class="tag">End-Effector Control</span>
+    </div>
+
+    <div class="project-page-content">
+      <h2 class="project-page-heading">The Challenge</h2>
+      <p>Standard manipulation pipelines fail rigidly when encountering unexpected obstacles near the target object in cluttered household environments. Traditional approaches hard-abort upon any contact or proximity violation, resulting in low success rates in real-world domestic settings where objects are densely packed and unpredictable.</p>
+
+      <h2 class="project-page-heading">The Implementation</h2>
+      <p>Developed dynamic pick-maneuver logic that categorizes objects and adapts the end-effector approach in real time. Instead of hard-aborting upon minor environmental interference, the system intelligently recalculates palm angle openings and fallback trajectories, ensuring high success rates for grasping tasks in dense clutter.</p>
+
+      <h2 class="project-page-heading">Key Technical Details</h2>
+      <ul>
+        <li>Dynamic object categorization to determine optimal grasp strategy per target</li>
+        <li>Adaptive palm angle recalculation when collisions are detected — the gripper adjusts its approach vector rather than retreating</li>
+        <li>Fallback trajectory generation using MoveIt for alternative approach paths</li>
+        <li>Integration with the CPDS manipulation stack on ROS2 Humble</li>
+        <li>Trajectory caching system to reduce replanning latency during recovery maneuvers</li>
+      </ul>
+
+      <h2 class="project-page-heading">Outcome</h2>
+      <p>Significantly improved grasping success rates in cluttered household environments. The system handles edge cases — overlapping objects, soft fabrics, uneven surfaces — that previously caused hard failures, enabling Clutterbot's cleaning robot to operate reliably in real homes.</p>
+    </div>
+
+    <a href="../index.html#projects" class="back-link back-link--bottom">← Back to projects</a>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
