@@ -3,200 +3,244 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Robin Tomar</title>
+  <title>Robin Tomar — Robot Software Engineering Lead</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ── HEADER ──────────────────────────────────────────────────────── -->
-  <header class="site-header">
-    <a href="#about" class="site-logo">ROBIN TOMAR</a>
-    <nav class="site-nav">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#interests" class="nav-link">Interests</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
+  <!-- ── MOBILE HEADER (hidden on desktop) ────────────────────────────── -->
+  <header class="mobile-header">
+    <span class="mobile-logo">ROBIN TOMAR</span>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#about"      class="mobile-nav-link">01 — About</a>
+      <a href="#projects"   class="mobile-nav-link">02 — Projects</a>
+      <a href="#experience" class="mobile-nav-link">03 — Experience</a>
+      <a href="#interests"  class="mobile-nav-link">04 — Interests</a>
+      <a href="#contact"    class="mobile-nav-link">05 — Contact</a>
+    </nav>
   </header>
 
-  <main>
+  <!-- ── PAGE LAYOUT ──────────────────────────────────────────────────── -->
+  <div class="page-layout">
 
-    <!-- ── ABOUT / HERO ────────────────────────────────────────────────── -->
-    <section id="about" class="section hero-section">
-      <div class="container">
-        <span class="section-label">ABOUT</span>
-        <div class="hero-content">
-          <div class="hero-photo-wrap">
-            <!-- EDIT: replace with <img src="assets/images/profile.jpg" alt="Robin Tomar" class="hero-photo" /> -->
-            <div class="hero-photo-placeholder">PHOTO</div>
-          </div>
-          <div class="hero-text">
-            <h1 class="hero-name">Robin Tomar</h1>
-            <p class="hero-role">Robot Software Engineering Lead · Engineering the Future of Embodied AI</p>
-            <p class="hero-bio">
-              I'm a Robot Software Engineering Lead with a deep-rooted passion for advanced manipulation,
-              adaptive control, and physical hardware. With a Physics background and 5+ years in robotics —
-              from warehouse automation to consumer tech — I've driven the transition from classical motion
-              planning (PID, MoveIt) to data-driven autonomy (RL, VLA models), building the C++/ROS2
-              infrastructure required to deploy these models reliably onto physical actuators in
-              unstructured environments.
-            </p>
-            <div class="hero-links">
-              <!-- EDIT: replace href with your actual profile URLs -->
-              <a href="https://github.com/robintomar1" class="icon-link" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-              <a href="https://linkedin.com/in/robintomar1" class="icon-link" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                LinkedIn
-              </a>
-              <!-- EDIT: replace with your email address -->
-              <a href="mailto:robin@example.com" class="icon-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Email
-              </a>
-            </div>
-          </div>
-        </div>
+    <!-- ── SIDEBAR ────────────────────────────────────────────────────── -->
+    <aside class="sidebar">
+      <div class="sidebar-identity">
+        <!-- EDIT: replace with <img src="assets/images/profile.jpg" alt="Robin Tomar" class="sidebar-photo" /> -->
+        <div class="sidebar-photo-placeholder">PHOTO</div>
+
+        <h1 class="sidebar-name">Robin Tomar</h1>
+        <p class="sidebar-role">Robot Software Engineering Lead</p>
+        <p class="sidebar-tagline">Engineering the Future of Embodied AI</p>
       </div>
-    </section>
 
-    <!-- ── PROJECTS ────────────────────────────────────────────────────── -->
-    <section id="projects" class="section">
-      <div class="container">
-        <span class="section-label">PROJECTS &amp; TECHNICAL DEEP DIVES</span>
-        <div class="projects-grid">
+      <nav class="sidebar-nav">
+        <a href="#about"      class="sidebar-nav-link" data-section="about">      <span>About</span></a>
+        <a href="#projects"   class="sidebar-nav-link" data-section="projects">   <span>Projects</span></a>
+        <a href="#experience" class="sidebar-nav-link" data-section="experience"> <span>Experience</span></a>
+        <a href="#interests"  class="sidebar-nav-link" data-section="interests">  <span>Interests</span></a>
+        <a href="#contact"    class="sidebar-nav-link" data-section="contact">    <span>Contact</span></a>
+      </nav>
+
+      <div class="sidebar-social">
+        <!-- EDIT: replace href with your actual profile URLs -->
+        <a href="https://github.com/robintomar1" class="social-link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/robintomar1" class="social-link" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <!-- EDIT: replace with your email address -->
+        <a href="mailto:robin@example.com" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+    <main class="main-content">
+
+      <!-- ── 01. ABOUT ──────────────────────────────────────────────── -->
+      <section id="about" class="section">
+        <div class="section-label"><span class="section-num">01 —</span> ABOUT</div>
+        <p class="about-bio">
+          I'm a Robot Software Engineering Lead with a deep-rooted passion for advanced manipulation,
+          adaptive control, and physical hardware. With a foundational background in Physics and over
+          five years of hands-on experience in the robotics industry — ranging from high-throughput
+          warehouse automation to cutting-edge consumer tech — I have developed a sharp intuition for
+          the friction between software intent and hardware reality.
+        </p>
+        <p class="about-bio">
+          My career is defined by technical evolution. I have driven the transition from classical
+          motion planning architectures (PID, MoveIt) to data-driven autonomy (Reinforcement Learning,
+          Vision-Language-Action models). I don't just train models or write simulation scripts; I build
+          the teams and the robust C++/ROS2 infrastructures required to deploy these models reliably
+          onto physical actuators and sensors in unstructured environments.
+        </p>
+        <p class="about-bio">
+          I thrive on solving "unsolved" problems at the cutting edge, turning complex theoretical AI
+          into tangible, household-ready robotic actions.
+        </p>
+      </section>
+
+      <!-- ── 02. PROJECTS ───────────────────────────────────────────── -->
+      <section id="projects" class="section">
+        <div class="section-label"><span class="section-num">02 —</span> PROJECTS &amp; TECHNICAL DEEP DIVES</div>
+        <div class="projects-list">
 
           <article class="project-card">
             <div class="project-image-wrap">
-              <img src="assets/images/project-grasping.png" alt="Robotic gripper grasping a garment" class="project-image" />
+              <img src="assets/images/project-grasping.png" alt="Robotic gripper performing adaptive grasping" class="project-image" />
             </div>
-            <div class="project-info">
-              <h3 class="project-title">Adaptive Grasping &amp; Collision Recovery</h3>
-            </div>
-            <div class="project-desc-wrap">
-              <p class="project-desc">Standard manipulation pipelines fail rigidly when encountering unexpected obstacles in cluttered household environments. Built dynamic pick-maneuver logic that categorizes objects and adapts the end-effector approach — intelligently recalculating palm angle openings and fallback trajectories instead of hard-aborting, ensuring high success rates in dense clutter.</p>
+            <div class="project-body">
+              <h3 class="project-title">Adaptive Grasping &amp; Collision Recovery Strategy</h3>
+              <p class="project-challenge"><span class="project-label">CHALLENGE</span> Standard manipulation pipelines fail rigidly when encountering unexpected obstacles near the target object in cluttered household environments.</p>
+              <p class="project-impl"><span class="project-label">IMPLEMENTATION</span> Developed dynamic pick-maneuver logic that categorizes objects and adapts the end-effector approach. Instead of hard-aborting upon minor environmental interference, the system intelligently recalculates palm angle openings and fallback trajectories, ensuring high success rates for grasping tasks in dense clutter.</p>
               <div class="project-tags">
                 <span class="tag">C++</span>
                 <span class="tag">ROS2</span>
                 <span class="tag">MoveIt</span>
                 <span class="tag">Motion Planning</span>
+                <span class="tag">End-Effector Control</span>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-image-wrap">
-              <div class="project-image-placeholder">ROS2 RESOURCE OPTIMIZATION</div>
+            <div class="project-image-wrap project-image-placeholder-wrap">
+              <div class="project-image-placeholder">ROS2 · EDGE COMPUTE</div>
             </div>
-            <div class="project-info">
+            <div class="project-body">
               <h3 class="project-title">ROS2 Resource Optimization for Embodied AI</h3>
-            </div>
-            <div class="project-desc-wrap">
-              <p class="project-desc">Running complex VLA models, state machines, and continuous control loops simultaneously causes severe CPU bottlenecking on edge compute devices. Conducted granular thread and memory profiling of ROS2 multithreaded executors, restructuring node communication to minimize pub/sub overhead — yielding a lean, responsive control stack capable of running advanced AI locally without thermal throttling.</p>
+              <p class="project-challenge"><span class="project-label">CHALLENGE</span> Running complex VLA models, state machines, and continuous control loops simultaneously leads to severe CPU bottlenecking and system freezes on edge compute devices.</p>
+              <p class="project-impl"><span class="project-label">IMPLEMENTATION</span> Conducted granular thread and memory profiling of ROS2 multithreaded executors. Restructured node communication to minimize publisher/subscriber overhead during high-frequency spine movements, resulting in a lean, highly responsive control stack capable of running advanced AI locally without thermal throttling.</p>
               <div class="project-tags">
                 <span class="tag">ROS2</span>
                 <span class="tag">VLA Models</span>
                 <span class="tag">Edge Compute</span>
-                <span class="tag">Profiling</span>
+                <span class="tag">Thread Profiling</span>
+                <span class="tag">Memory Optimization</span>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-image-wrap">
-              <div class="project-image-placeholder">HIGH-SPEED AMR STABILITY</div>
+            <div class="project-image-wrap project-image-placeholder-wrap">
+              <div class="project-image-placeholder">AMR · STABILITY</div>
             </div>
-            <div class="project-info">
+            <div class="project-body">
               <h3 class="project-title">High-Speed AMR Stability Architecture</h3>
-            </div>
-            <div class="project-desc-wrap">
-              <p class="project-desc">A 40kg payload moving at 2 m/s introduces severe mechanical shear and drift during emergency stops and tight cornering. Built a custom tuning profile mapping predictive velocity to traction control, integrating sensor fusion data to dynamically adjust acceleration curves based on real-time payload weight estimation — completely eliminating chassis tilt and improving grid-localization accuracy at top speeds.</p>
+              <p class="project-challenge"><span class="project-label">CHALLENGE</span> A 40kg payload moving at 2 m/s introduces severe mechanical shear and drift during emergency stops and tight cornering.</p>
+              <p class="project-impl"><span class="project-label">IMPLEMENTATION</span> Built a custom tuning profile mapping predictive velocity to traction control. Integrated sensor fusion data to dynamically adjust acceleration curves based on real-time payload weight estimation, completely eliminating chassis tilt and improving grid-localization accuracy at top speeds.</p>
               <div class="project-tags">
                 <span class="tag">LiDAR</span>
+                <span class="tag">RealSense</span>
                 <span class="tag">Sensor Fusion</span>
                 <span class="tag">Control Systems</span>
-                <span class="tag">Fleet Nav</span>
+                <span class="tag">Fleet Navigation</span>
               </div>
             </div>
           </article>
 
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ── EXPERIENCE ──────────────────────────────────────────────────── -->
-    <section id="experience" class="section">
-      <div class="container">
-        <span class="section-label">EXPERIENCE</span>
+      <!-- ── 03. EXPERIENCE ─────────────────────────────────────────── -->
+      <section id="experience" class="section">
+        <div class="section-label"><span class="section-num">03 —</span> EXPERIENCE</div>
         <div class="timeline">
 
           <div class="timeline-item">
-            <span class="timeline-date">Sep 2023 – Present</span>
+            <div class="timeline-meta">
+              <span class="timeline-date">Sep 2023 – Present</span>
+              <span class="timeline-location">Bengaluru, India</span>
+            </div>
             <div class="timeline-body">
-              <h3 class="timeline-role">Lead Robotics Software Engineer II <span class="timeline-company">@ Clutterbot</span></h3>
-              <p class="timeline-desc">Leading the manipulation and control architecture for a first-of-its-kind household cleaning robot. Grew the manipulation team from a single contributor to four engineers. Spearheaded the migration from classical planning to RL and VLA models, and designed the CPDS manipulation stack on ROS2 Humble with a trajectory caching system that reduces runtime planning overhead. Acted as bridge between mechanical, electrical, and software teams — conducting deep memory profiling to resolve critical hardware bottlenecks.</p>
+              <h3 class="timeline-role">Lead Robotics Software Engineer II</h3>
+              <p class="timeline-company">Clutterbot</p>
+              <p class="timeline-desc">Leading the manipulation and control architecture for a first-of-its-kind household cleaning robot, managing the transition from R&D to reliable, real-world deployment. Grew the manipulation team from a single contributor to a high-performing unit of four engineers. Spearheaded the migration from classical planning to RL and Vision-Language-Action (VLA) models. Designed and implemented the CPDS manipulation stack on ROS2 Humble with a trajectory caching system that reduces runtime planning overhead. Acted as bridge between mechanical, electrical, and software teams — conducting deep memory profiling to resolve critical hardware bottlenecks.</p>
+              <div class="timeline-tags">
+                <span class="tag">ROS2 Humble</span>
+                <span class="tag">C++</span>
+                <span class="tag">RL</span>
+                <span class="tag">VLA Models</span>
+                <span class="tag">MoveIt</span>
+              </div>
             </div>
           </div>
 
           <div class="timeline-item">
-            <span class="timeline-date">Aug 2020 – Sep 2023</span>
+            <div class="timeline-meta">
+              <span class="timeline-date">Aug 2020 – Sep 2023</span>
+              <span class="timeline-location">Noida, India</span>
+            </div>
             <div class="timeline-body">
-              <h3 class="timeline-role">Technology Lead &amp; Robotics Engineer <span class="timeline-company">@ Addverb</span></h3>
-              <p class="timeline-desc">Drove end-to-end development of a high-speed Autonomous Mobile Robot (AMR) capable of delivering 40kg payloads at 2 m/s in dynamic warehouse environments. Managed the product from prototyping and sensor selection (LiDAR, RealSense) through to dispatch and multi-site deployment. Resolved critical WiFi latency, AP switching, and bandwidth issues across deployed fleets.</p>
+              <h3 class="timeline-role">Technology Lead &amp; Robotics Engineer</h3>
+              <p class="timeline-company">Addverb</p>
+              <p class="timeline-desc">Drove the end-to-end development of a high-speed Autonomous Mobile Robot (AMR) capable of delivering 40kg payloads at 2 m/s in dynamic warehouse environments. Managed the product from initial prototyping and sensor selection (LiDAR, RealSense) through to dispatch and multi-site deployment. Executed detailed stability and motion analysis, collaborating directly with mechanical teams on design changes. Resolved critical WiFi latency, AP switching, and bandwidth issues across deployed fleets.</p>
+              <div class="timeline-tags">
+                <span class="tag">ROS</span>
+                <span class="tag">LiDAR</span>
+                <span class="tag">AMR</span>
+                <span class="tag">Fleet Management</span>
+                <span class="tag">Sensor Fusion</span>
+              </div>
             </div>
           </div>
 
           <div class="timeline-item">
-            <span class="timeline-date">Mar 2019 – Dec 2019</span>
+            <div class="timeline-meta">
+              <span class="timeline-date">Mar 2019 – Dec 2019</span>
+              <span class="timeline-location">Noida, India</span>
+            </div>
             <div class="timeline-body">
-              <h3 class="timeline-role">Robotics Engineer <span class="timeline-company">@ BoticX Labs</span></h3>
+              <h3 class="timeline-role">Robotics Engineer</h3>
+              <p class="timeline-company">BoticX Labs</p>
               <p class="timeline-desc">Focused on humanoid robot research and development, building foundations in robot perception, movement control, and locomotion using ROS.</p>
+              <div class="timeline-tags">
+                <span class="tag">ROS</span>
+                <span class="tag">Humanoid Robotics</span>
+                <span class="tag">Locomotion</span>
+              </div>
             </div>
           </div>
 
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ── INTERESTS ───────────────────────────────────────────────────── -->
-    <section id="interests" class="section">
-      <div class="container">
-        <span class="section-label">INTERESTS &amp; PHILOSOPHY</span>
-        <div class="interests-grid">
-          <div class="interest-card">
-            <span class="interest-icon">🔩</span>
-            <span class="interest-label">Hardware–Software Interface</span>
+      <!-- ── 04. INTERESTS ──────────────────────────────────────────── -->
+      <section id="interests" class="section">
+        <div class="section-label"><span class="section-num">04 —</span> INTERESTS &amp; PHILOSOPHY</div>
+        <div class="interests-list">
+
+          <div class="interest-item">
+            <h3 class="interest-title">The Hardware-Software Interface</h3>
+            <p class="interest-desc">Endlessly fascinated by low-level embedded systems and the physical realities of robotics. A beautiful algorithm is useless if the actuator cannot handle the torque. I spend a significant amount of time studying custom PCB designs, sensor fusion integrations, and the mechanical limits of modern servo motors.</p>
           </div>
-          <div class="interest-card">
-            <span class="interest-icon">🎓</span>
-            <span class="interest-label">Mentorship &amp; Eng. Culture</span>
+
+          <div class="interest-item">
+            <h3 class="interest-title">Mentorship &amp; Engineering Culture</h3>
+            <p class="interest-desc">I believe the best engineering environments are built on psychological safety and continuous learning. Since 2017, I have served as a mentor and resource person for university robotics clubs (including my alma mater, DDUC), conducting workshops and guiding students from foundational concepts to complex ROS deployments.</p>
           </div>
-          <div class="interest-card">
-            <span class="interest-icon">🕹️</span>
-            <span class="interest-label">VR Teleoperation</span>
+
+          <div class="interest-item">
+            <h3 class="interest-title">Pushing the Boundaries of Teleoperation</h3>
+            <p class="interest-desc">Beyond autonomous models, I am actively exploring VR-based teleoperation and high-fidelity force-feedback systems. Bridging the gap between human intuition and robotic execution is a critical stepping stone toward gathering the high-quality data necessary to train the next generation of general-purpose robots.</p>
           </div>
-          <div class="interest-card">
-            <span class="interest-icon">🤖</span>
-            <span class="interest-label">Embodied AI</span>
-          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ── CONTACT ─────────────────────────────────────────────────────── -->
-    <section id="contact" class="section">
-      <div class="container">
-        <span class="section-label">CONTACT</span>
+      <!-- ── 05. CONTACT ────────────────────────────────────────────── -->
+      <section id="contact" class="section">
+        <div class="section-label"><span class="section-num">05 —</span> CONTACT</div>
         <p class="contact-intro">Open to conversations about robotics, embodied AI, and interesting hard problems. Best reached by email.</p>
         <div class="contact-links">
-          <!-- EDIT: replace with your real email address -->
+          <!-- EDIT: replace with your real email -->
           <a href="mailto:robin@example.com" class="contact-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             robin@example.com
@@ -210,15 +254,14 @@
             linkedin.com/in/robintomar1
           </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <footer class="site-footer">
+        <p class="footer-text">© 2026 Robin Tomar</p>
+      </footer>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <p class="footer-text">© 2026 Robin Tomar</p>
-  </footer>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

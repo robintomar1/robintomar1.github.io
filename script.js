@@ -1,23 +1,24 @@
 // ── Active nav highlight on scroll ──────────────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const sections     = document.querySelectorAll('section[id]');
+const sidebarLinks = document.querySelectorAll('.sidebar-nav-link');
+const mobileLinks  = document.querySelectorAll('.mobile-nav-link');
 
 function setActiveLink() {
   const scrollY = window.scrollY;
   let current = '';
 
   sections.forEach(section => {
-    const top = section.offsetTop - 80;
-    if (scrollY >= top) {
+    if (scrollY >= section.offsetTop - 120) {
       current = section.getAttribute('id');
     }
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) {
-      link.classList.add('active');
-    }
+  sidebarLinks.forEach(link => {
+    link.classList.toggle('active', link.dataset.section === current);
+  });
+
+  mobileLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
   });
 }
 
@@ -26,15 +27,11 @@ setActiveLink();
 
 // ── Mobile nav toggle ────────────────────────────────────────────────────────
 const navToggle = document.querySelector('.nav-toggle');
-const siteNav = document.querySelector('.site-nav');
+const mobileNav = document.querySelector('.mobile-nav');
 
-navToggle.addEventListener('click', () => {
-  siteNav.classList.toggle('open');
-});
-
-// Close mobile nav when a link is tapped
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    siteNav.classList.remove('open');
+if (navToggle && mobileNav) {
+  navToggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => mobileNav.classList.remove('open'));
   });
-});
+}
