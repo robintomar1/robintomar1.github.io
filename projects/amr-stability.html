@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMR Stability — Robin Tomar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <div class="project-page">
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="project-page-hero">
+      <img src="../assets/images/project-amr-stability.png" alt="AMR fleet navigation paths in warehouse" class="project-page-image" />
+    </div>
+
+    <div class="section-label"><span class="section-num">02 —</span> DEEP DIVE</div>
+    <h1 class="section-heading">High-Speed AMR Stability Architecture</h1>
+
+    <div class="project-page-tags">
+      <span class="tag">LiDAR</span>
+      <span class="tag">RealSense</span>
+      <span class="tag">Sensor Fusion</span>
+      <span class="tag">Control Systems</span>
+      <span class="tag">Fleet Navigation</span>
+    </div>
+
+    <div class="project-page-content">
+      <h2 class="project-page-heading">The Challenge</h2>
+      <p>A 40kg payload moving at 2 m/s introduces severe mechanical shear and drift during emergency stops and tight cornering. At these speeds, even small instabilities cascade into chassis tilt, localization drift, and potential payload damage — unacceptable in a warehouse operating 24/7.</p>
+
+      <h2 class="project-page-heading">The Implementation</h2>
+      <p>Built a custom tuning profile mapping predictive velocity to traction control. Integrated sensor fusion data to dynamically adjust acceleration curves based on real-time payload weight estimation, completely eliminating chassis tilt and improving grid-localization accuracy at top speeds.</p>
+
+      <h2 class="project-page-heading">Key Technical Details</h2>
+      <ul>
+        <li>Custom velocity-to-traction mapping using predictive control profiles for different payload weights</li>
+        <li>Real-time payload weight estimation via IMU and motor current feedback</li>
+        <li>Dynamic acceleration curve adjustment — heavier payloads get gentler deceleration profiles automatically</li>
+        <li>Sensor fusion pipeline combining LiDAR, RealSense depth cameras, and wheel odometry</li>
+        <li>Grid-localization accuracy improvements at 2 m/s — maintained centimeter-level precision during high-speed traversal</li>
+        <li>Emergency stop optimization — controlled deceleration instead of hard braking to prevent payload shift</li>
+      </ul>
+
+      <h2 class="project-page-heading">Outcome</h2>
+      <p>Completely eliminated chassis tilt during high-speed operation. The AMR delivers 40kg payloads at full speed with centimeter-level localization accuracy, zero drift during emergency stops, and no payload damage — deployed across multiple warehouse sites.</p>
+    </div>
+
+    <a href="../index.html#projects" class="back-link back-link--bottom">← Back to projects</a>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

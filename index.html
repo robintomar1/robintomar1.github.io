@@ -60,7 +60,7 @@
         <a href="https://github.com/robintomar1" class="social-link" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
         </a>
-        <a href="https://linkedin.com/in/robintomar1" class="social-link" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/in/robin-tomar-4a005a103/" class="social-link" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <!-- EDIT: replace with your email address -->
@@ -105,59 +105,65 @@
         <h2 class="section-heading">Technical Deep Dives</h2>
         <div class="projects-list">
 
-          <article class="project-card">
-            <div class="project-image-wrap">
-              <img src="assets/images/project-grasping.png" alt="Robotic gripper performing adaptive grasping" class="project-image" />
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Adaptive Grasping &amp; Collision Recovery Strategy</h3>
-              <p class="project-challenge"><span class="project-label">CHALLENGE</span> Standard manipulation pipelines fail rigidly when encountering unexpected obstacles near the target object in cluttered household environments.</p>
-              <p class="project-impl"><span class="project-label">IMPLEMENTATION</span> Developed dynamic pick-maneuver logic that categorizes objects and adapts the end-effector approach. Instead of hard-aborting upon minor environmental interference, the system intelligently recalculates palm angle openings and fallback trajectories, ensuring high success rates for grasping tasks in dense clutter.</p>
-              <div class="project-tags">
-                <span class="tag">C++</span>
-                <span class="tag">ROS2</span>
-                <span class="tag">MoveIt</span>
-                <span class="tag">Motion Planning</span>
-                <span class="tag">End-Effector Control</span>
+          <a href="projects/adaptive-grasping.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-image-wrap">
+                <img src="assets/images/project-grasping.png" alt="Robotic gripper performing adaptive grasping" class="project-image" />
               </div>
-            </div>
-          </article>
+              <div class="project-body">
+                <h3 class="project-title">Adaptive Grasping &amp; Collision Recovery Strategy</h3>
+                <p class="project-summary">Dynamic pick-maneuver logic for robust grasping in cluttered household environments.</p>
+                <div class="project-tags">
+                  <span class="tag">C++</span>
+                  <span class="tag">ROS2</span>
+                  <span class="tag">MoveIt</span>
+                  <span class="tag">Motion Planning</span>
+                  <span class="tag">End-Effector Control</span>
+                </div>
+                <span class="project-expand-hint">View deep dive →</span>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <div class="project-image-wrap">
-              <img src="assets/images/project-ros2-optimization.png" alt="AMR with LiDAR sensor visualization" class="project-image" />
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">ROS2 Resource Optimization for Embodied AI</h3>
-              <p class="project-challenge"><span class="project-label">CHALLENGE</span> Running complex VLA models, state machines, and continuous control loops simultaneously leads to severe CPU bottlenecking and system freezes on edge compute devices.</p>
-              <p class="project-impl"><span class="project-label">IMPLEMENTATION</span> Conducted granular thread and memory profiling of ROS2 multithreaded executors. Restructured node communication to minimize publisher/subscriber overhead during high-frequency spine movements, resulting in a lean, highly responsive control stack capable of running advanced AI locally without thermal throttling.</p>
-              <div class="project-tags">
-                <span class="tag">ROS2</span>
-                <span class="tag">VLA Models</span>
-                <span class="tag">Edge Compute</span>
-                <span class="tag">Thread Profiling</span>
-                <span class="tag">Memory Optimization</span>
+          <a href="projects/ros2-optimization.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-image-wrap">
+                <img src="assets/images/project-ros2-optimization.png" alt="AMR with LiDAR sensor visualization" class="project-image" />
               </div>
-            </div>
-          </article>
+              <div class="project-body">
+                <h3 class="project-title">ROS2 Resource Optimization for Embodied AI</h3>
+                <p class="project-summary">Granular thread and memory profiling to run advanced AI on edge compute without thermal throttling.</p>
+                <div class="project-tags">
+                  <span class="tag">ROS2</span>
+                  <span class="tag">VLA Models</span>
+                  <span class="tag">Edge Compute</span>
+                  <span class="tag">Thread Profiling</span>
+                  <span class="tag">Memory Optimization</span>
+                </div>
+                <span class="project-expand-hint">View deep dive →</span>
+              </div>
+            </article>
+          </a>
 
-          <article class="project-card">
-            <div class="project-image-wrap">
-              <img src="assets/images/project-amr-stability.png" alt="AMR fleet navigation paths in warehouse" class="project-image" />
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">High-Speed AMR Stability Architecture</h3>
-              <p class="project-challenge"><span class="project-label">CHALLENGE</span> A 40kg payload moving at 2 m/s introduces severe mechanical shear and drift during emergency stops and tight cornering.</p>
-              <p class="project-impl"><span class="project-label">IMPLEMENTATION</span> Built a custom tuning profile mapping predictive velocity to traction control. Integrated sensor fusion data to dynamically adjust acceleration curves based on real-time payload weight estimation, completely eliminating chassis tilt and improving grid-localization accuracy at top speeds.</p>
-              <div class="project-tags">
-                <span class="tag">LiDAR</span>
-                <span class="tag">RealSense</span>
-                <span class="tag">Sensor Fusion</span>
-                <span class="tag">Control Systems</span>
-                <span class="tag">Fleet Navigation</span>
+          <a href="projects/amr-stability.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-image-wrap">
+                <img src="assets/images/project-amr-stability.png" alt="AMR fleet navigation paths in warehouse" class="project-image" />
               </div>
-            </div>
-          </article>
+              <div class="project-body">
+                <h3 class="project-title">High-Speed AMR Stability Architecture</h3>
+                <p class="project-summary">Custom tuning profile with sensor fusion for 40kg payloads at 2 m/s — zero chassis tilt.</p>
+                <div class="project-tags">
+                  <span class="tag">LiDAR</span>
+                  <span class="tag">RealSense</span>
+                  <span class="tag">Sensor Fusion</span>
+                  <span class="tag">Control Systems</span>
+                  <span class="tag">Fleet Navigation</span>
+                </div>
+                <span class="project-expand-hint">View deep dive →</span>
+              </div>
+            </article>
+          </a>
 
         </div>
       </section>
@@ -353,7 +359,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             github.com/robintomar1
           </a>
-          <a href="https://linkedin.com/in/robintomar1" class="contact-link" target="_blank" rel="noopener">
+          <a href="https://www.linkedin.com/in/robin-tomar-4a005a103/" class="contact-link" target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             linkedin.com/in/robintomar1
           </a>
