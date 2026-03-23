@@ -1,3 +1,18 @@
+// ── Theme toggle (dark / light) ──────────────────────────────────────────────
+(function () {
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.theme-toggle');
+    if (!btn) return;
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+
 // ── Active nav highlight on scroll ──────────────────────────────────────────
 const sections     = document.querySelectorAll('section[id]');
 const sidebarLinks = document.querySelectorAll('.sidebar-nav-link');
