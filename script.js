@@ -51,6 +51,35 @@ if (navToggle && mobileNav) {
   });
 }
 
+// ── Scroll-reveal ────────────────────────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length) {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+}
+
+// ── Scroll progress bar ──────────────────────────────────────────────────────
+const progressBar = document.getElementById('scrollProgress');
+if (progressBar) {
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+  }, { passive: true });
+}
+
+// ── Smooth page transition for project links ─────────────────────────────────
+document.querySelectorAll('.project-card-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+    document.body.style.transition = 'opacity 0.3s ease';
+    document.body.style.opacity = '0';
+    setTimeout(() => { window.location.href = href; }, 300);
+  });
+});
+
 // ── Starfield background ─────────────────────────────────────────────────────
 (function () {
   const canvas = document.getElementById('starfield');
