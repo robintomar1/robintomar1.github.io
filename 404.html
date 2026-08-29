@@ -4,22 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 — Robin Tomar</title>
+  <meta name="robots" content="noindex" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500&family=Source+Serif+4:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;650;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="starfield"></canvas>
 
-  <div class="project-page" style="text-align:center;padding-top:20vh">
-    <p style="font-family:var(--font-mono);font-size:80px;color:var(--text-dim);line-height:1">404</p>
-    <h1 class="section-heading" style="margin-top:16px">Page Not Found</h1>
-    <p style="font-size:16px;color:var(--text-body);margin-bottom:32px">The robot looked everywhere but couldn't find this page.</p>
-    <a href="/" class="resume-btn">← Back to Home</a>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="wordmark">robin</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="/#about"    class="nav-link">About</a>
+      <a href="/#career"   class="nav-link">Career</a>
+      <a href="/#talks"    class="nav-link">Talks</a>
+      <a href="/#projects" class="nav-link">Projects</a>
+      <a href="/#contact"  class="nav-link">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   </div>
+</header>
 
-  <script src="script.js"></script>
+<main class="detail">
+  <div class="wrap">
+    <div class="card" style="padding:72px 48px;text-align:center">
+      <span class="eyebrow eyebrow--accent">Error 404</span>
+      <h1 class="detail-title" style="max-width:none;margin:14px auto 12px">Nothing here<span style="color:var(--accent)">.</span></h1>
+      <p style="font-size:15px;color:var(--muted);max-width:44ch;margin:0 auto 28px">
+        That page doesn't exist, or it moved. The links below still work.
+      </p>
+      <div class="contact-actions" style="justify-content:center">
+        <a href="/" class="btn btn--solid">Back to home</a>
+        <a href="/#projects" class="btn">Projects</a>
+        <a href="/#talks" class="btn">Talks</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a href="/" class="wordmark">robin</a>
+    <span class="footer-note">© 2026 Robin Tomar</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
