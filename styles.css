@@ -383,6 +383,84 @@ a   { color: inherit; text-decoration: none; }
 .about-bio + .about-bio { margin-top: 16px; }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   Highlights
+───────────────────────────────────────────────────────────────────────────── */
+.highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.highlight-item:last-child { border-bottom: none; }
+
+.highlight-item:hover {
+  background: var(--accent-dim);
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 4px;
+}
+
+.highlight-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--accent);
+  flex-shrink: 0;
+  min-width: 40px;
+}
+
+.highlight-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.highlight-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  flex: 1;
+  min-width: 0;
+}
+
+.highlight-arrow {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  transition: color 0.15s, transform 0.15s;
+}
+
+.highlight-item:hover .highlight-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .highlight-item {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .highlight-desc {
+    flex-basis: 100%;
+    margin-top: 4px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    Projects
 ───────────────────────────────────────────────────────────────────────────── */
 .projects-list {

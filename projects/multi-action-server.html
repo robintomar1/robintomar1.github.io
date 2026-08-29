@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi Action Server Issue — Robin Tomar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <div class="project-page">
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="section-label"><span class="section-num">02 —</span> DEEP DIVE</div>
+    <h1 class="section-heading">The Multi Action Server Communication Issue</h1>
+
+    <div class="project-page-tags">
+      <span class="tag">ROS2</span>
+      <span class="tag">Action Servers</span>
+      <span class="tag">Concurrency</span>
+      <span class="tag">Debugging</span>
+    </div>
+
+    <div class="project-page-content">
+      <h2 class="project-page-heading">The Problem</h2>
+      <p>Our manipulation pipeline orchestrates multiple sequential and parallel actions — move to pre-grasp, open gripper, execute approach, close gripper, retract. Each step is an action server call. Under certain timing conditions, the system would silently fail: an action would complete successfully but the next step would never execute. No errors, no timeouts — just a robot frozen mid-task.</p>
+
+      <h2 class="project-page-heading">The Investigation</h2>
+      <ul>
+        <li>Traced the issue to a race condition in how ROS2 action clients handle goal state transitions when multiple action servers are chained</li>
+        <li>The result callback from one action was being processed in a callback group that blocked the goal request of the next action</li>
+        <li>The problem was intermittent — it depended on executor thread scheduling and DDS message ordering</li>
+        <li>Standard ROS2 logging showed clean success states, making the failure invisible without deep introspection</li>
+      </ul>
+
+      <h2 class="project-page-heading">The Fix</h2>
+      <ul>
+        <li>Restructured the callback group architecture — separated action result processing from goal submission into isolated reentrant callback groups</li>
+        <li>Implemented explicit state machine transitions between action steps with timeout guards</li>
+        <li>Added detailed diagnostic logging at the executor level to catch future callback scheduling issues</li>
+        <li>Contributed findings back to internal documentation for the team</li>
+      </ul>
+
+      <h2 class="project-page-heading">Lesson</h2>
+      <p>ROS2's action server API is powerful but its concurrency model has sharp edges. When you chain multiple action calls in a manipulation pipeline, the interaction between callback groups, executors, and DDS delivery order can create failure modes that don't show up in unit tests or simulation — only on real hardware under real timing constraints.</p>
+    </div>
+
+    <a href="../index.html#projects" class="back-link back-link--bottom">← Back to projects</a>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

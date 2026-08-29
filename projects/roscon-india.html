@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROSCon India — Robin Tomar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <div class="project-page">
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="section-label"><span class="section-num">02 —</span> DEEP DIVE</div>
+    <h1 class="section-heading">ROSCon India Presentation</h1>
+
+    <div class="project-page-tags">
+      <span class="tag">ROS2</span>
+      <span class="tag">Talk</span>
+      <span class="tag">Manipulation</span>
+      <span class="tag">Production Systems</span>
+    </div>
+
+    <div class="project-page-content">
+      <h2 class="project-page-heading">The Talk</h2>
+      <p>Presented at ROSCon India on the challenges and lessons learned from building production-grade manipulation systems with ROS2. The talk covered the journey from prototype to deployed product — the architectural decisions, the failures, and the patterns that actually worked when the robot had to perform reliably every single day.</p>
+
+      <h2 class="project-page-heading">Key Topics Covered</h2>
+      <ul>
+        <li>Designing a manipulation stack that survives real-world deployment — not just simulation</li>
+        <li>The transition from deterministic control pipelines to adaptive planning with MoveIt2</li>
+        <li>Managing complexity in multi-node ROS2 architectures under real-time constraints</li>
+        <li>Hardware-software co-design: how mechanical limitations shape software architecture</li>
+        <li>Lessons from scaling a manipulation team from one engineer to a full squad</li>
+      </ul>
+
+      <h2 class="project-page-heading">Impact</h2>
+      <p>The presentation resonated with the Indian robotics community, sparking conversations about the gap between academic ROS usage and production robotics. It connected practitioners facing similar challenges across different domains — from warehouse automation to consumer robots.</p>
+    </div>
+
+    <a href="../index.html#projects" class="back-link back-link--bottom">← Back to projects</a>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

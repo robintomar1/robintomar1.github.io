@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Controller for IL — Robin Tomar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <button class="theme-toggle" aria-label="Toggle theme">
+    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+
+  <div class="project-page">
+    <a href="../index.html#projects" class="back-link">← Back to projects</a>
+
+    <div class="section-label"><span class="section-num">02 —</span> DEEP DIVE</div>
+    <h1 class="section-heading">Custom Controller for Imitation Learning</h1>
+
+    <div class="project-page-tags">
+      <span class="tag">ROS2</span>
+      <span class="tag">ros2_control</span>
+      <span class="tag">Imitation Learning</span>
+      <span class="tag">Policy Deployment</span>
+    </div>
+
+    <div class="project-page-content">
+      <h2 class="project-page-heading">The Challenge</h2>
+      <p>Imitation learning policies output joint-space or task-space commands at high frequency, but the standard ros2_control controllers are designed for trajectory following — they expect pre-planned paths with time parameterization. There was no clean way to stream learned policy outputs directly to hardware while maintaining safety limits, joint constraints, and smooth actuation.</p>
+
+      <h2 class="project-page-heading">The Implementation</h2>
+      <ul>
+        <li>Built a custom ros2_control controller plugin that accepts streaming command inputs from an IL policy at the control loop rate</li>
+        <li>Implemented a command interface that bridges the gap between policy inference (running on GPU) and hardware actuation (running in the real-time control loop)</li>
+        <li>Added configurable safety layers — velocity limits, acceleration limits, joint boundary checks — applied at the controller level before commands reach hardware</li>
+        <li>Designed a smooth transition mechanism to switch between traditional trajectory controllers and the IL controller without stopping the robot</li>
+        <li>Integrated with the existing CPDS manipulation stack so IL-based behaviors could be composed with deterministic ones</li>
+      </ul>
+
+      <h2 class="project-page-heading">Key Design Decisions</h2>
+      <ul>
+        <li>The controller runs in the real-time thread while policy inference runs asynchronously — a lock-free ring buffer bridges the two</li>
+        <li>Fallback to the last safe command if policy inference misses a deadline, preventing jerky motion</li>
+        <li>Configurable interpolation between policy output and current state for smooth startup and handoff</li>
+      </ul>
+
+      <h2 class="project-page-heading">Outcome</h2>
+      <p>Enabled the team to deploy imitation learning policies directly on the physical robot with hardware-level safety guarantees. This became the foundation for exploring learned manipulation behaviors alongside the existing deterministic pipeline — the robot can now seamlessly blend planned motions with learned ones.</p>
+    </div>
+
+    <a href="../index.html#projects" class="back-link back-link--bottom">← Back to projects</a>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

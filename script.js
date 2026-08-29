@@ -1,7 +1,7 @@
 // ── Theme toggle (dark / light) ──────────────────────────────────────────────
 (function () {
-  const saved = localStorage.getItem('theme');
-  if (saved) document.documentElement.setAttribute('data-theme', saved);
+  const saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
 
   document.addEventListener('click', e => {
     const btn = e.target.closest('.theme-toggle');
