@@ -28,7 +28,6 @@
       <a href="#about"    class="nav-link">About</a>
       <a href="#career"   class="nav-link">Career</a>
       <a href="#talks"    class="nav-link">Talks</a>
-      <a href="#projects" class="nav-link">Projects</a>
       <a href="#contact"  class="nav-link">Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -156,8 +155,7 @@
         </div>
       </div>
 
-      <div class="timeline">
-      <div class="tl-row tl-row--current">
+      <div class="tl-row">
         <div class="tl-date">2023 — 2025</div>
         <div class="tl-marker"></div>
         <div class="tl-body">
@@ -176,11 +174,11 @@
           <p class="tl-desc">Completed end-to-end development for a new AGV product delivering 40 kg payloads at 2 m/s — from prototyping to deployment.</p>
         </div>
       </div>
-      </div>
-      </div>
+
       <div class="tl-row">
         <div class="tl-sub"><span class="eyebrow">Education</span></div>
       </div>
+
       <div class="tl-row">
         <div class="tl-date">2018 — 2020</div>
         <div class="tl-marker"></div>
@@ -229,7 +227,7 @@
         <h3 class="talk-title">Worldwide hackathon</h3>
         <p class="talk-desc">Taking part in the LeRobot worldwide hackathon, training policies on real hardware.</p>
         <span class="talk-go">Read ↗</span>
-      </a>
+      </a> -->
     </div>
 
     <div class="card video-card">
@@ -251,114 +249,14 @@
       </div>
     </div>
   </div>
-</section> -->
-
-<!-- ═══ 04 PROJECTS ═══════════════════════════════════════════════════ -->
-<section class="section reveal" id="projects">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-num">04 /</span>
-      <h2 class="sec-title">Technical deep dives</h2>
-      <span class="sec-rule"></span>
-    </div>
-
-    <!-- <div class="projects">
-
-      <a href="projects/adaptive-grasping.html" class="proj">
-        <div class="proj-body">
-          <div class="proj-kicker">
-            <span class="pill">Architecture</span>
-            <span class="eyebrow eyebrow--accent">Manipulation</span>
-          </div>
-          <h3 class="proj-title">Manipulation system rearchitecture</h3>
-          <p class="proj-desc">Designed and implemented a new architecture for <em>flexibility and robustness</em> in goal interpretation and execution — the backbone the rest of the manipulation stack builds on.</p>
-          <div class="tags">
-            <span class="tag">C++</span><span class="tag">ROS2</span><span class="tag">MoveIt</span><span class="tag">Motion Planning</span><span class="tag">End-Effector Control</span>
-          </div>
-          <span class="proj-go">Read the deep dive ↗</span>
-        </div>
-        <div class="proj-media">
-          <img src="assets/images/project-grasping.webp" alt="Robotic gripper performing adaptive grasping" loading="lazy" />
-        </div>
-      </a>
-
-      <a href="projects/multi-action-server.html" class="proj">
-        <div class="proj-body">
-          <div class="proj-kicker">
-            <span class="pill">Debugging</span>
-            <span class="eyebrow eyebrow--accent">ROS2 · Action servers</span>
-          </div>
-          <h3 class="proj-title">Multi action server communication</h3>
-          <p class="proj-desc">Diagnosed and resolved multi-layer ROS2 action server blockages causing <em>silent temporary deadlocks</em> in processing.</p>
-          <div class="tags">
-            <span class="tag">ROS2</span><span class="tag">Action Servers</span><span class="tag">Concurrency</span><span class="tag">Debugging</span>
-          </div>
-          <span class="proj-go">Read the deep dive ↗</span>
-        </div>
-        <div class="proj-media proj-media--blank"><span>ROS2 · Action servers</span></div>
-      </a>
-
-      <a href="projects/custom-controller-il.html" class="proj">
-        <div class="proj-body">
-          <div class="proj-kicker">
-            <span class="pill">Learning</span>
-            <span class="eyebrow eyebrow--accent">Imitation learning</span>
-          </div>
-          <h3 class="proj-title">Custom controller and IL proof of concept</h3>
-          <p class="proj-desc">Built a custom controller for data recording, then used open-source <em>LeRobot</em> tooling to test imitation learning policies on the real arm.</p>
-          <div class="tags">
-            <span class="tag">ROS2</span><span class="tag">VLA</span><span class="tag">Imitation Learning</span><span class="tag">MoveIt2</span>
-          </div>
-          <span class="proj-go">Read the deep dive ↗</span>
-        </div>
-        <div class="proj-media proj-media--blank"><span>Imitation learning</span></div>
-      </a>
-
-      <a href="projects/ros2-optimization.html" class="proj">
-        <div class="proj-body">
-          <div class="proj-kicker">
-            <span class="pill">Performance</span>
-            <span class="eyebrow eyebrow--accent">Profiling</span>
-          </div>
-          <h3 class="proj-title">ROS2 resource optimization</h3>
-          <p class="proj-desc">Thread and memory profiling to find system bottlenecks, and <em>improved latency</em> for the communication paths that mattered most.</p>
-          <div class="tags">
-            <span class="tag">Memory Profiling</span><span class="tag">Valgrind</span><span class="tag">Debugging</span><span class="tag">Thread Profiling</span><span class="tag">Memory Optimization</span>
-          </div>
-          <span class="proj-go">Read the deep dive ↗</span>
-        </div>
-        <div class="proj-media">
-          <img src="assets/images/project-ros2-optimization.webp" alt="AMR with LiDAR sensor visualization" loading="lazy" />
-        </div>
-      </a>
-
-      <a href="projects/amr-stability.html" class="proj">
-        <div class="proj-body">
-          <div class="proj-kicker">
-            <span class="pill">Systems</span>
-            <span class="eyebrow eyebrow--accent">AMR · Sortation</span>
-          </div>
-          <h3 class="proj-title">Full system analysis for a new sortation robot</h3>
-          <p class="proj-desc">Velocity profiling and system design improvements for a <em>2 m/s</em> sortation robot, from stability analysis through to fleet behaviour.</p>
-          <div class="tags">
-            <span class="tag">LiDAR</span><span class="tag">Velocity Profiling</span><span class="tag">Sensor Fusion</span><span class="tag">Control Systems</span><span class="tag">Fleet Navigation</span>
-          </div>
-          <span class="proj-go">Read the deep dive ↗</span>
-        </div>
-        <div class="proj-media">
-          <img src="assets/images/project-amr-stability.webp" alt="AMR fleet navigation paths in warehouse" loading="lazy" />
-        </div>
-      </a> -->
-
-    </div>
-  </div>
 </section>
+
 
 <!-- ═══ 05 BEYOND THE WORK ════════════════════════════════════════════ -->
 <section class="section reveal" id="interests">
   <div class="wrap">
     <div class="sec-head">
-      <span class="sec-num">05 /</span>
+      <span class="sec-num">04 /</span>
       <h2 class="sec-title">Beyond the work</h2>
       <span class="sec-rule"></span>
     </div>
