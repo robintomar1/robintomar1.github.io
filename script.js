@@ -79,3 +79,28 @@
     x0 = null;
   });
 })();
+
+// ── Posts carousel ───────────────────────────────────────────────────────
+(function () {
+  const track = document.getElementById('postsTrack');
+  if (!track) return;
+  const prev = document.getElementById('postsPrev');
+  const next = document.getElementById('postsNext');
+  const wrap = track.parentElement;
+
+  const step = () => {
+    const card = track.querySelector('.post');
+    return card ? card.getBoundingClientRect().width + 16 : track.clientWidth * 0.8;
+  };
+  function update() {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    if (prev) prev.disabled = track.scrollLeft <= 2;
+    if (next) next.disabled = track.scrollLeft >= max;
+    wrap.classList.toggle('at-end', track.scrollLeft >= max);
+  }
+  prev && prev.addEventListener('click', () => track.scrollBy({ left: -step() }));
+  next && next.addEventListener('click', () => track.scrollBy({ left:  step() }));
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();

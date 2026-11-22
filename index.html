@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;650;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20261122h" />
+  <link rel="stylesheet" href="styles.css?v=20261122i" />
 </head>
 <body>
 
@@ -142,37 +142,15 @@
       <h2 class="sec-title">From the bench</h2>
       <span class="sec-rule"></span>
       <a href="https://x.com/robintomar_" class="sec-link" target="_blank" rel="noopener">More on X ↗</a>
+      <div class="posts-nav">
+        <button type="button" class="posts-btn" id="postsPrev" aria-label="Scroll posts left">←</button>
+        <button type="button" class="posts-btn" id="postsNext" aria-label="Scroll posts right">→</button>
+      </div>
     </div>
 
-    <div class="posts-grid">
-      <article class="card post post--feature">
-        <div class="post-media post-media--pair">
-          <img src="assets/posts/hackathon-2.webp" alt="Robin on stage receiving the Physical AI Buildathon winner's cheque for Rovie at Bengaluru Tech Summit 2026" width="1600" height="900" loading="lazy" />
-          <img src="assets/posts/hackathon-1.webp" alt="Robin holding the one lakh rupee Physical AI Buildathon cheque" width="676" height="1200" loading="lazy" />
-        </div>
-        <div class="post-body">
-          <span class="eyebrow eyebrow--accent">Bengaluru Tech Summit · Nov 2026</span>
-          <h3 class="post-title">Won the Physical AI Buildathon</h3>
-          <p class="post-text">Yaaay money to buy more hardware. Robotics hackathon at <a href="https://x.com/blrtechsummit" target="_blank" rel="noopener">@blrtechsummit</a></p>
-          <a href="https://x.com/robintomar_/status/2123970932289191948" class="post-go" target="_blank" rel="noopener"><svg class="post-x" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Nov 21, 2026 · View on X ↗</span></a>
-        </div>
-      </article>
-
-      <article class="card post post--video">
-        <div class="post-media post-media--tall">
-          <video controls playsinline preload="none" poster="assets/posts/rebot-arm-poster.webp?v=2" width="540" height="960">
-            <source src="assets/posts/rebot-arm.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="post-body">
-          <span class="eyebrow eyebrow--accent">Hardware · Weekend build</span>
-          <h3 class="post-title">Assembling the reBot-DM arm</h3>
-          <p class="post-text">Got this <a href="https://x.com/seeedstudio" target="_blank" rel="noopener">@seeedstudio</a> reBot-DM arm working over the weekend. My fingers hurt after screwing 100s of M3s but the chocolate in the end was worth it. Now I understand why they have a $250 difference between assembled and un-assembled versions.</p>
-          <a href="https://x.com/robintomar_/status/2117105492648657195" class="post-go" target="_blank" rel="noopener"><svg class="post-x" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Nov 2, 2026 · View on X ↗</span></a>
-        </div>
-      </article>
-
-      <article class="card post post--wide">
+    <div class="posts-wrap">
+    <div class="posts-grid" id="postsTrack" tabindex="0" aria-label="Posts from X, scroll sideways">
+      <article class="card post">
         <div class="post-media">
           <img src="assets/posts/home-lab.webp" alt="Robin's home robotics lab: a robot arm in a lit enclosure next to a laptop and monitor" width="1600" height="901" loading="lazy" />
         </div>
@@ -186,6 +164,34 @@
           <a href="https://x.com/robintomar_/status/2124322042350854518" class="post-go" target="_blank" rel="noopener"><svg class="post-x" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Nov 22, 2026 · View on X ↗</span></a>
         </div>
       </article>
+
+      <article class="card post">
+        <div class="post-media post-media--pair">
+          <img src="assets/posts/hackathon-2.webp" alt="Robin on stage receiving the Physical AI Buildathon winner's cheque for Rovie at Bengaluru Tech Summit 2026" width="1600" height="900" loading="lazy" />
+          <img src="assets/posts/hackathon-1.webp" alt="Robin holding the one lakh rupee Physical AI Buildathon cheque" width="676" height="1200" loading="lazy" />
+        </div>
+        <div class="post-body">
+          <span class="eyebrow eyebrow--accent">Bengaluru Tech Summit · Nov 2026</span>
+          <h3 class="post-title">Won the Physical AI Buildathon</h3>
+          <p class="post-text">Yaaay money to buy more hardware. Robotics hackathon at <a href="https://x.com/blrtechsummit" target="_blank" rel="noopener">@blrtechsummit</a></p>
+          <a href="https://x.com/robintomar_/status/2123970932289191948" class="post-go" target="_blank" rel="noopener"><svg class="post-x" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Nov 21, 2026 · View on X ↗</span></a>
+        </div>
+      </article>
+
+      <article class="card post">
+        <div class="post-media post-media--tall">
+          <video controls playsinline preload="none" poster="assets/posts/rebot-arm-poster.webp?v=2" width="540" height="960">
+            <source src="assets/posts/rebot-arm.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="post-body">
+          <span class="eyebrow eyebrow--accent">Hardware · Weekend build</span>
+          <h3 class="post-title">Assembling the reBot-DM arm</h3>
+          <p class="post-text">Got this <a href="https://x.com/seeedstudio" target="_blank" rel="noopener">@seeedstudio</a> reBot-DM arm working over the weekend. My fingers hurt after screwing 100s of M3s but the chocolate in the end was worth it. Now I understand why they have a $250 difference between assembled and un-assembled versions.</p>
+          <a href="https://x.com/robintomar_/status/2117105492648657195" class="post-go" target="_blank" rel="noopener"><svg class="post-x" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>Nov 2, 2026 · View on X ↗</span></a>
+        </div>
+      </article>
+    </div>
     </div>
   </div>
 </section>
@@ -442,6 +448,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261122f"></script>
+<script src="script.js?v=20261122i"></script>
 </body>
 </html>
