@@ -587,6 +587,8 @@ img { max-width: 100%; display: block; }
 }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .footer-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--muted); }
+.footer-note a { color: var(--ink-soft); border-bottom: 1px solid var(--line); transition: color 0.15s ease, border-color 0.15s ease; }
+.footer-note a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ═══ PROJECT DETAIL PAGES ═════════════════════════════════════════════ */
 .detail { padding: 48px 0 0; }
