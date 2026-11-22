@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;650;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20261122e" />
+  <link rel="stylesheet" href="styles.css?v=20261122f" />
 </head>
 <body>
 
@@ -327,6 +327,49 @@
         </table>
       </figure>
     </div>
+
+    <div class="gallery-head">
+      <span class="eyebrow eyebrow--accent">Trails &amp; travels</span>
+      <h3 class="note-title">Hiking and travel</h3>
+      <p class="note-desc">When I'm not around robots, I'm usually on a trail somewhere — mountains, coastlines and the occasional city in between.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-01.webp" data-alt="Robin by a glacial river in a pine valley beneath snow-covered peaks" aria-label="Open photo: Robin by a glacial river in a pine valley beneath snow-covered peaks">
+        <img src="assets/gallery/trip-01-sm.webp" alt="Robin by a glacial river in a pine valley beneath snow-covered peaks" width="450" height="800" loading="lazy" style="object-position:50% 12%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-03.webp" data-alt="A backpacker with a sleeping mat and tent walking a gravel trail toward a snow-capped mountain" aria-label="Open photo: A backpacker with a sleeping mat and tent walking a gravel trail toward a snow-capped mountain">
+        <img src="assets/gallery/trip-03-sm.webp" alt="A backpacker with a sleeping mat and tent walking a gravel trail toward a snow-capped mountain" width="450" height="800" loading="lazy" style="object-position:50% 55%" />
+      </button>
+      <button type="button" class="g-tile g-tile--wide" data-full="assets/gallery/trip-09.webp" data-alt="Selfie on a ridge overlooking forested hills and valleys, a fellow trekker behind" aria-label="Open photo: Selfie on a ridge overlooking forested hills and valleys, a fellow trekker behind">
+        <img src="assets/gallery/trip-09-sm.webp" alt="Selfie on a ridge overlooking forested hills and valleys, a fellow trekker behind" width="1000" height="562" loading="lazy" style="object-position:50% 40%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-04.webp" data-alt="Robin with a bamboo trekking stick and a red backpack on a mountain trail above a green valley" aria-label="Open photo: Robin with a bamboo trekking stick and a red backpack on a mountain trail above a green valley">
+        <img src="assets/gallery/trip-04-sm.webp" alt="Robin with a bamboo trekking stick and a red backpack on a mountain trail above a green valley" width="450" height="800" loading="lazy" style="object-position:50% 45%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-02.webp" data-alt="A pouch of freeze-dried chicken tikka masala held up in front of a snowy peak" aria-label="Open photo: A pouch of freeze-dried chicken tikka masala held up in front of a snowy peak">
+        <img src="assets/gallery/trip-02-sm.webp" alt="A pouch of freeze-dried chicken tikka masala held up in front of a snowy peak" width="450" height="800" loading="lazy" style="object-position:50% 55%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-05.webp" data-alt="Selfie in a bike helmet below a hill topped by a lighthouse" aria-label="Open photo: Selfie in a bike helmet below a hill topped by a lighthouse">
+        <img src="assets/gallery/trip-05-sm.webp" alt="Selfie in a bike helmet below a hill topped by a lighthouse" width="450" height="800" loading="lazy" style="object-position:50% 40%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-06.webp" data-alt="Selfie on a clifftop above a rugged coastline with breaking waves" aria-label="Open photo: Selfie on a clifftop above a rugged coastline with breaking waves">
+        <img src="assets/gallery/trip-06-sm.webp" alt="Selfie on a clifftop above a rugged coastline with breaking waves" width="450" height="800" loading="lazy" style="object-position:50% 35%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-07.webp" data-alt="Selfie in front of Marina Bay Sands across the bay" aria-label="Open photo: Selfie in front of Marina Bay Sands across the bay">
+        <img src="assets/gallery/trip-07-sm.webp" alt="Selfie in front of Marina Bay Sands across the bay" width="450" height="800" loading="lazy" style="object-position:50% 45%" />
+      </button>
+      <button type="button" class="g-tile" data-full="assets/gallery/trip-08.webp" data-alt="Selfie in sunglasses with the sun bursting over a rocky hill" aria-label="Open photo: Selfie in sunglasses with the sun bursting over a rocky hill">
+        <img src="assets/gallery/trip-08-sm.webp" alt="Selfie in sunglasses with the sun bursting over a rocky hill" width="450" height="800" loading="lazy" style="object-position:50% 45%" />
+      </button>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+      <img class="lb-img" alt="" />
+      <button type="button" class="lb-btn lb-close" aria-label="Close">✕</button>
+      <button type="button" class="lb-btn lb-prev" aria-label="Previous photo">‹</button>
+      <button type="button" class="lb-btn lb-next" aria-label="Next photo">›</button>
+      <span class="lb-count"></span>
+    </dialog>
   </div>
 </section>
 
@@ -375,6 +418,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=20261122"></script>
+<script src="script.js?v=20261122f"></script>
 </body>
 </html>
