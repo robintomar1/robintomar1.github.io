@@ -557,6 +557,15 @@ img { max-width: 100%; display: block; }
   align-items: stretch;
 }
 .listen-hero { display: flex; flex-direction: column; gap: 10px; }
+.listen-brand { display: flex; align-items: center; gap: 10px; }
+.listen-logo {
+  width: 34px; height: 34px; padding: 6px;
+  fill: #F8991C;
+  background: #FFF6EA;
+  border: 1px solid #FBE3C2;
+  border-radius: 9px;
+  flex-shrink: 0;
+}
 .listen-total {
   font-size: clamp(44px, 5vw, 58px);
   font-weight: 800;
